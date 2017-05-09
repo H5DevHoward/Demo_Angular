@@ -5,11 +5,11 @@ const postcssConfig = require('./postcss.config');
 process.noDeprecation = true;
 
 module.exports = {
-    context: path.join(process.cwd(), 'dev'),
-    entry: './script/index.js',
+    context: path.join(process.cwd(), 'app'),
+    entry: './App.js',
     output: {
         path: path.join(process.cwd(), 'dist'),
-        filename: '[name].js',
+        filename: 'bundle.js',
     },
     module: {
         rules: [
@@ -27,19 +27,6 @@ module.exports = {
                             presets: ['env'],
                         },
                     },
-                    {
-                        loader: 'eslint-loader',
-                        options: {
-                            failOnWarning: true,
-                            failOnError: true,
-                        },
-                    },
-                ],
-            },
-            {
-                test: /\.vue$/,
-                use: [
-                    'vue-loader',
                     {
                         loader: 'eslint-loader',
                         options: {
@@ -79,10 +66,8 @@ module.exports = {
         ],
     },
     resolve: {
-        alias: {
-            vue$: 'vue/dist/vue.js',
-        },
-        extensions: ['.js', '.jsx', '.vue'],
+        alias: {},
+        extensions: ['.js'],
         modules: [
             'node_modules',
         ],

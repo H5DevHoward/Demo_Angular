@@ -1,4 +1,7 @@
 {
+    "extends": [
+    #   "./config/.eslintrc"
+    ],
     "env": {
         "browser": true,
         "node": true,
@@ -12,6 +15,7 @@
         "self": true,
         "System": true,
         "import": true,
+        "angular": true,
     },
     "parserOptions": {
         "ecmaVersion": 6,
@@ -22,6 +26,8 @@
         },
     },
     "rules": {
+        // require is not defined
+        "global-require": "off",
         // 声明
         "prefer-const": "error", //如果一个变量不会被重新赋值，最好使用const进行声明
         "no-const-assign": "error", //不允许改变用const声明的变量

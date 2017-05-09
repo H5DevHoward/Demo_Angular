@@ -6,7 +6,7 @@ const webpack = require('webpack');
 module.exports = merge(config, {
     devtool: 'eval-source-map',
     devServer: {
-        contentBase: path.join(process.cwd(), 'dev'),
+        contentBase: path.join(process.cwd(), 'app'),
         historyApiFallback: true,
         stats: {
             colors: true,
